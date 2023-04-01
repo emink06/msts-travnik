@@ -1,0 +1,1033 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@300&display=swap");
+
+@font-face {
+  font-family: Futur;
+  src: url(../Font/Ailerons-TrialVersion.otf);
+}
+:root {
+  --primarnaboja: rgb(180, 39, 180);
+
+  --lineargradient: linear-gradient(
+    to right,
+    rgb(180, 39, 180),
+    rgb(127, 46, 127),
+    rgb(101, 0, 101)
+  );
+}
+/*styles*/
+
+* {
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: black;
+  border-radius: 100svw;
+  margin-block: 2em;
+  z-index: 10000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10%;
+  border-radius: 100svw;
+  z-index: 9999999;
+  transition: all 1s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.header {
+  display: flex;
+  z-index: -2;
+  background-image: url(../Slike/Slika1.webp);
+  background-size: cover;
+  height: 100svh;
+  width: 100.5%;
+  padding-bottom: 40px;
+}
+
+.naslov {
+  pointer-events: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Futur, Poppins, sans-serif;
+  color: hsl(0, 0%, 90%);
+  font-size: 7em;
+  font-weight: 900;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 1), 0 0 8px rgba(0, 0, 0, 0.35),
+    0 0 10px rgba(0, 0, 0, 0.2);
+  transition: 600ms;
+}
+
+.naslov p {
+  cursor: default;
+  pointer-events: all;
+  transition: all 600ms;
+}
+.bgblur {
+  display: flex;
+  height: 100svh;
+  width: 100.5%;
+  transition: 200ms;
+}
+.naslov p:hover {
+  color: black;
+  transform: translateY(-10px);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 1), 0 0 8px rgba(255, 255, 255, 0.35),
+    0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.bgblur:has(> .naslov p:hover) {
+  backdrop-filter: blur(5px);
+}
+
+.content {
+  position: relative;
+  gap: 1rem;
+  padding: 15px 15px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  height: auto;
+  color: white;
+  font-family: poppins, sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.grid-tekst {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-slika {
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.grid-slika img {
+  object-fit: cover;
+  border-radius: 1em;
+  aspect-ratio: 1;
+  width: 80%;
+  filter: saturate(0%);
+  transition: all 600ms;
+}
+
+.grid-slika img:hover {
+  filter: saturate(100%);
+}
+
+.grid-nav {
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 50px;
+  gap: 0.5em;
+}
+
+.grid-nav button {
+  background-color: rgba(255, 255, 255, 0);
+  border-style: none;
+}
+
+.grid-nav img {
+  filter: invert(1);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 80%;
+  -webkit-filter: invert(1);
+  transition: all 300ms;
+}
+
+.grid-nav img:hover {
+  transform: rotate(5deg);
+  -webkit-filter: invert(1) drop-shadow(5px 5px 5px var(--primarnaboja));
+  filter: invert(1) drop-shadow(5px 5px 5px var(--primarnaboja));
+}
+
+/* menu tipka */
+
+.meni {
+  margin: 1em 0 0 1em;
+  height: 2em;
+  border-radius: 15%;
+  width: 2em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.098);
+  background-image: url(../Slike/menu-outline-modified.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: fixed;
+  left: 0;
+  z-index: 10000;
+  transition: 150ms;
+  border: none;
+}
+
+.navigacija {
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 4em;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-image: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 0%, 0.662) 50%,
+    hsla(0, 0%, 0%, 0.016)
+  );
+  transform: translateY(-100%);
+  transition: 300ms;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav-link {
+  font-family: poppins;
+  font-size: auto;
+  color: white;
+  text-decoration: none;
+  transition: 400ms;
+}
+.nav-link:hover {
+  scale: 1.07;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 1), 0 0 8px rgba(255, 255, 255, 0.35),
+    0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.meniOtvoren .navigacija {
+  transform: translateY(0px);
+  position: fixed;
+}
+
+.meniOtvoren .meni {
+  background-image: url(../Slike/close-outline-modified.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.meni:hover {
+  -webkit-filter: drop-shadow(5px 5px 1px var(--primarnaboja));
+  filter: drop-shadow(5px 5px 1px var(--primarnaboja));
+}
+
+/* Slajdovi */
+
+.planete {
+  position: relative;
+  transition: 0.5s;
+  height: 100%;
+  width: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  transform: translateX(-100%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+    "naslov naslov naslov naslov"
+    "slika tekst tekst tekst";
+  padding-inline: 2em;
+  margin: 0px;
+  gap: 15px;
+  font-family: poppins;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.planete h1 {
+  border-right: solid 10px var(--primarnaboja);
+  grid-area: naslov;
+  padding-left: 7%;
+  text-align: left;
+  text-shadow: 5px 5px 5px var(--primarnaboja);
+}
+
+.planete p {
+  border: solid 2px;
+  border-image: linear-gradient(
+      to bottom,
+      var(--primarnaboja),
+      rgba(0, 0, 0, 0)
+    )
+    1 100%;
+  border-radius: 0px;
+  padding: 1em;
+  grid-area: tekst;
+  text-align: left;
+  height: 60%;
+}
+
+.planete img {
+  border-radius: 50%;
+  grid-area: rgb(180, 39, 180) slika;
+  width: 90%;
+}
+
+.planetes > .planete {
+  transform: translateX(0px);
+}
+
+/* ------------------------------------------------------------- */
+
+.sistemi {
+  position: relative;
+  transition: 0.5s;
+  height: 100%;
+  width: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  transform: translateX(-100%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+    "naslov naslov naslov naslov"
+    "slika tekst tekst tekst";
+  padding-inline: 2em;
+  margin: 0px;
+  gap: 15px;
+  font-family: poppins;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.sistemi h1 {
+  border-right: solid 10px var(--primarnaboja);
+  grid-area: naslov;
+  padding-left: 7%;
+  text-align: left;
+  text-shadow: 5px 5px 5px var(--primarnaboja);
+}
+
+.sistemi p {
+  border: solid 2px;
+  border-image: linear-gradient(
+      to bottom,
+      var(--primarnaboja),
+      rgba(0, 0, 0, 0)
+    )
+    1 100%;
+  border-radius: 0px;
+  padding: 1em;
+  grid-area: tekst;
+  text-align: left;
+  height: 60%;
+}
+
+.sistemi img {
+  border-radius: 50%;
+  grid-area: slika;
+  width: 90%;
+}
+
+.sistemis > .sistemi {
+  transform: translateX(0px);
+}
+
+/* ------------------------------------------------------------- */
+
+.cr {
+  position: relative;
+  transition: 0.5s;
+  height: 100%;
+  width: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  transform: translateX(-100%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+    "naslov naslov naslov naslov"
+    "slika tekst tekst tekst";
+  padding-inline: 2em;
+  margin: 0px;
+  gap: 15px;
+  font-family: poppins;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.cr h1 {
+  border-right: solid 10px var(--primarnaboja);
+  grid-area: naslov;
+  padding-left: 7%;
+  text-align: left;
+  text-shadow: 5px 5px 5px var(--primarnaboja);
+}
+
+.cr p {
+  border: solid 2px;
+  border-image: linear-gradient(
+      to bottom,
+      var(--primarnaboja),
+      rgba(0, 0, 0, 0)
+    )
+    1 100%;
+  border-radius: 0px;
+  padding: 1em;
+  grid-area: tekst;
+  text-align: left;
+  height: 60%;
+}
+
+.cr img {
+  border-radius: 50%;
+  grid-area: slika;
+  width: 90%;
+}
+
+.crs > .cr {
+  transform: translateX(0px);
+}
+
+/* ------------------------------------------------------------- */
+
+.putovanja {
+  position: relative;
+  transition: 0.5s;
+  height: 100%;
+  width: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  transform: translateX(-100%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+    "naslov naslov naslov naslov"
+    "slika tekst tekst tekst";
+  padding-inline: 2em;
+  margin: 0px;
+  gap: 15px;
+  font-family: poppins;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.putovanja h1 {
+  border-right: solid 10px var(--primarnaboja);
+  grid-area: naslov;
+  padding-left: 7%;
+  text-align: left;
+  text-shadow: 5px 5px 5px var(--primarnaboja);
+}
+
+.putovanja p {
+  border: solid 2px;
+  border-image: linear-gradient(
+      to bottom,
+      var(--primarnaboja),
+      rgba(0, 0, 0, 0)
+    )
+    1 100%;
+  border-radius: 0px;
+  padding: 1em;
+  grid-area: tekst;
+  text-align: left;
+  height: 60%;
+}
+
+.putovanja img {
+  border-radius: 50%;
+  grid-area: slika;
+  width: 90%;
+}
+
+.putovanjas > .putovanja {
+  transform: translateX(0px);
+}
+
+/* tipke */
+
+.zatvori {
+  color: white;
+  font-family: poppins;
+  font-size: 3vh;
+  height: 7vh;
+  width: 14vw;
+  background-color: black;
+  border: solid 2px var(--primarnaboja);
+  border-radius: 3vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 1cm 1cm;
+}
+
+.sljedeci {
+  color: white;
+  font-family: poppins;
+  font-size: 3vh;
+  height: 7vh;
+  width: 14vw;
+  background-color: black;
+  border: solid 2px var(--primarnaboja);
+  border-radius: 3vw;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0 1cm 1cm 0;
+}
+
+/* Footer */
+
+.footer {
+  margin-top: 5em;
+  border-top: solid 2px var(--primarnaboja);
+  padding-block: 3em;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  color: white;
+  font-family: poppins;
+  font-size: 1em;
+  cursor: default;
+  line-height: 1em;
+}
+
+.footer img {
+  aspect-ratio: 1;
+  width: 50px;
+  transition: 300ms;
+}
+
+.footer img:hover {
+  scale: 1.05;
+  transform: rotate(15deg);
+}
+
+.footerbtn {
+  background-color: transparent;
+  border: none;
+}
+
+/* kontakt.html */
+
+.kontakt-wrapper {
+  font-family: poppins;
+  font-size: 0.6cm;
+  color: white;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-image: url(../Slike/kontaktbg.webp);
+  background-size: cover;
+}
+
+.kontakt {
+  overflow: hidden;
+  width: 50%;
+  height: 75%;
+  padding-inline: 1rem;
+  background-color: rgba(31, 27, 27, 0.3);
+  border-radius: 3vw;
+  backdrop-filter: blur(15px);
+  place-items: center;
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "tekst tekst tekst tekst"
+    "tekst tekst tekst tekst"
+    "dugme dugme dugme dugme";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.kontaktforma {
+  width: 100%;
+  grid-area: header;
+  display: grid;
+  place-items: center;
+  font-weight: bolder;
+}
+
+.tekstbox {
+  grid-area: tekst;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+}
+
+.tekstbox input {
+  background-color: rgba(0, 0, 0, 0.15);
+  width: 62%;
+  height: 1cm;
+  border: none;
+  border-radius: 1rem;
+  margin-bottom: 0.6cm;
+}
+
+.tekstbox textarea {
+  padding: 0.4cm;
+  color: white;
+  border-radius: 1rem;
+  border: none;
+  width: 100%;
+  height: 70%;
+  resize: none;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.15);
+  outline: none;
+  overflow: auto;
+}
+
+.submit {
+  grid-area: dugme;
+}
+
+.submit button {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: white;
+  font-family: poppins;
+  font-size: 0.4cm;
+  border-radius: 1rem;
+  border: none;
+  height: 1.5cm;
+  width: 3cm;
+}
+
+/* onama.html */
+
+.content2 {
+  margin: 0;
+  height: auto;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-family: poppins;
+}
+
+.fill {
+  width: 80vw;
+  min-height: 100svh;
+}
+
+.onama {
+  background-color: rgb(26, 26, 26);
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  margin-top: 5em;
+  padding: 50px 25px;
+  position: relative;
+}
+
+.onama h1 {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  text-shadow: 5px 5px 5px var(--primarnaboja);
+}
+
+.onama p {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.linija {
+  height: 4px;
+  width: 100%;
+  animation: gra 1s infinite;
+  background-image: var(--lineargradient);
+  background-size: 400%;
+  animation: gradientpozadine 3s infinite alternate;
+}
+
+@keyframes gradientpozadine {
+  0% {
+    background-position: 100% 100%;
+  }
+  33.33% {
+    background-position: 50% 50%;
+  }
+
+  66.66% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 50% 75%;
+  }
+}
+
+.izvori {
+  font-weight: bolder;
+  text-shadow: none !important;
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: var(--lineargradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 300%;
+  animation: gradientpozadine 3s infinite alternate;
+}
+
+.znanje {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  place-items: center;
+}
+
+.znanje img {
+  background-color: white;
+  aspect-ratio: 1;
+  max-width: 300px;
+  border-radius: 1em;
+}
+
+.znanje div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.znanje div a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  border: solid 2px white;
+}
+
+/* galerija.html */
+
+.galerijawrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  width: 100%;
+}
+
+.galerija {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  grid-row-gap: 2rem;
+  width: 80%;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, rgb(30, 30, 30), rgb(15, 15, 15), black);
+  padding: 1rem
+}
+
+.galerijanaslov {
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-shadow: 5px 5px 5px var(--primarnaboja);
+  font-family: poppins;
+}
+
+.mask {
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+.mask img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+figure.zoom {
+  background-position: 50% 50%;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  cursor: zoom-in;
+  border-top: solid 3px var(--primarnaboja);
+  border-bottom: solid 3px var(--primarnaboja);
+  margin: 0;
+}
+
+figure.zoom img:hover {
+  opacity: 0;
+}
+
+figure.zoom img {
+  transition: opacity 0s;
+  display: block;
+}
+
+/* Zoom on hover je uradjen pomocu: https://codepen.io/fghty/pen/BaZGpdZ?editors=1000 */
+
+/* Za telefone */
+
+@media only screen and (max-width: 650px) {
+  .pocetak {
+    grid-template-columns: 100% !important;
+  }
+
+  .navigacija {
+    padding: 0 1.4cm 0 1.4cm;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    height: 100vh;
+    width: auto;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background-image: linear-gradient(
+      to right,
+      hsla(0, 0%, 0%, 0.662) 50%,
+      hsla(0, 0%, 0%, 0.016)
+    );
+    transform: translateX(-100%);
+    transition: 300ms;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .meniOtvoren .navigacija {
+    transform: translateX(0px);
+    position: fixed;
+  }
+
+  .content {
+    gap: 1rem;
+    padding: 15px 15px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    height: auto;
+    color: white;
+    font-family: poppins, sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 1em;
+  }
+
+  .grid-nav {
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2cm;
+  }
+
+  .grid-nav img {
+    filter: invert(1);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 35%;
+    -webkit-filter: invert(1);
+    transition: all 300ms;
+  }
+
+  .grid-nav p {
+    display: none;
+  }
+
+  .content2,
+  .fill {
+    width: 100%-10px;
+    min-height: 0px;
+  }
+
+  .fill {
+    padding: 2rem 1rem;
+  }
+
+  .znanje {
+    grid-template-columns: 1fr;
+    border-top: solid 2px var(--primarnaboja);
+    padding-top: 1rem;
+  }
+
+  .kontakt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 27, 27, 0.3);
+    backdrop-filter: blur(5px);
+    grid-template-areas: initial;
+    place-items: center;
+  }
+
+  .kontaktforma,
+  .tekstbox,
+  .submit {
+    grid-area: unset;
+    width: 80%;
+  }
+
+  /* Slajdovi */
+
+  .planete {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    overflow-y: scroll;
+    grid-template-areas: initial;
+    place-items: center;
+  }
+
+  .planete :is(h1, p, img) {
+    grid-area: unset;
+    width: 100%;
+  }
+
+  .planete p {
+    height: auto;
+  }
+
+  .cr {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    overflow-y: scroll;
+    grid-template-areas: initial;
+    place-items: center;
+  }
+
+  .cr :is(h1, p, img) {
+    grid-area: unset;
+    width: 100%;
+  }
+
+  .cr p {
+    height: auto;
+  }
+
+  .sistemi {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    overflow-y: scroll;
+    grid-template-areas: initial;
+    place-items: center;
+  }
+
+  .sistemi :is(h1, p, img) {
+    grid-area: unset;
+    width: 100%;
+  }
+
+  .sistemi p {
+    height: auto;
+  }
+
+  .sistemi h1 {
+    height: auto;
+  }
+
+  .putovanja {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    overflow-y: scroll;
+    grid-template-areas: initial;
+    place-items: center;
+  }
+
+  .putovanja :is(h1, p, img) {
+    grid-area: unset;
+    width: 100%;
+  }
+
+  .putovanja p {
+    height: auto;
+  }
+
+  .sljedeci {
+    position: initial;
+    padding-inline: 20px;
+    width: auto;
+  }
+
+  .zatvori {
+    position: initial;
+    padding-inline: 20px;
+    width: auto;
+  }
+
+  .slide-nav {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .galerijanaslov {
+    margin-bottom: 2em;
+  }
+
+  .galerija {
+    row-gap: 0px;
+  }
+
+  figure.zoom {
+    border-top: none;
+    border-bottom: none;
+  }
+}

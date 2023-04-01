@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./Slike/ikona.ico" />
+    <title>Galerija</title>
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <script src="./JS/main.js"></script>
+    <script src="./JS/scrolltotop.js"></script>
+    <script src="./JS/onmousemovezoom.js"></script>
+  </head>
+  <body>
+    <div class="navigacija">
+      <a href="./index.html" class="nav-link">Pocetna</a>
+      <a href="./galerija.html" class="nav-link">Galerija</a>
+      <a href="./onama.html" class="nav-link">O nama</a>
+      <a href="./kontakt.html" class="nav-link">Kontakt</a>
+    </div>
+
+    <button class="meni" onclick="otvoriMeni()"></button>
+    <div class="galerijawrapper">
+      <div class="galerija">
+        <h1 class="galerijanaslov">Galerija</h1>
+
+        <div class="mask">
+          <figure
+            class="zoom"
+            onmousemove="zoom(event)"
+            style="background-image: url(./Slike/galerija1.png)"
+          >
+            <img src="./Slike/galerija1.png" alt="" />
+          </figure>
+          <h1 class="galerijanaslov">Lord of the Rings</h1>
+        </div>
+
+        <div class="mask">
+          <figure
+            class="zoom"
+            onmousemove="zoom(event)"
+            style="background-image: url(./Slike/galerija2.webp)"
+          >
+            <img src="./Slike/galerija2.webp" alt="" />
+          </figure>
+          <h1 class="galerijanaslov">Crna Rupa</h1>
+        </div>
+
+        <div class="mask">
+          <figure
+            class="zoom"
+            onmousemove="zoom(event)"
+            style="background-image: url(./Slike/galerija3.webp)"
+          >
+            <img src="./Slike/galerija3.webp" alt="" />
+          </figure>
+          <h1 class="galerijanaslov">Zemlja</h1>
+        </div>
+
+        <div class="mask">
+          <figure
+            class="zoom"
+            onmousemove="zoom(event)"
+            style="background-image: url(./Slike/galerija4.jpg)"
+          >
+            <img src="./Slike/galerija4.jpg" alt="" />
+          </figure>
+          <h1 class="galerijanaslov">Površina Marsa</h1>
+        </div>
+
+        <div class="mask">
+          <figure
+            class="zoom"
+            onmousemove="zoom(event)"
+            style="background-image: url(./Slike/galerija5.jpg)"
+          >
+            <img src="./Slike/galerija5.jpg" alt="" />
+          </figure>
+          <h1 class="galerijanaslov">Crna Rupa</h1>
+        </div>
+
+        <div class="mask">
+          <figure
+            class="zoom"
+            onmousemove="zoom(event)"
+            style="background-image: url(./Slike/galerija6.jpg)"
+          >
+            <img src="./Slike/galerija6.jpg" alt="" />
+          </figure>
+          <h1 class="galerijanaslov">Mliječni Put</h1>
+        </div>
+
+        <div class="mask">
+          <figure
+            class="zoom"
+            onmousemove="zoom(event)"
+            style="background-image: url(./Slike/galerija7.jpeg)"
+          >
+            <img src="./Slike/galerija7.jpeg" alt="" />
+          </figure>
+          <h1 class="galerijanaslov">Magelanov Oblak</h1>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button class="footerbtn" onclick="scrolltotop()">
+        <img src="./Slike/galaxy-svgrepo-com.png" alt="Scroll to Top" />
+      </button>
+      <p>Nazad na vrh</p>
+      <p>Sajt kreiran za Web Design</p>
+      <p>Copyright 2023 &copy</p>
+    </div>
+  </body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+<script src="./js/scrolltrigger.js"></script>

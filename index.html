@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./Slike/ikona.ico" />
+    <title>Svemir</title>
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <script src="./JS/main.js"></script>
+    <script src="./JS/scrolltotop.js"></script>
+  </head>
+  <body id="top">
+    <div class="navigacija">
+      <a href="./index.html" class="nav-link">Pocetna</a>
+      <a href="./galerija.html" class="nav-link">Galerija</a>
+      <a href="./onama.html" class="nav-link">O nama</a>
+      <a href="./kontakt.html" class="nav-link">Kontakt</a>
+    </div>
+    <button class="meni" onclick="otvoriMeni()"></button>
+    <div class="header">
+      <div class="bgblur">
+        <div class="naslov">
+          <p>S</p>
+          <p>V</p>
+          <p>E</p>
+          <p>M</p>
+          <p>I</p>
+          <p>R</p>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="grid-tekst">
+        <p>
+          THAT'S ONE SMALL STEP FOR MAN, ONE GIANT LEAP FOR MANKIND.
+          <span
+            style="
+              color: var(--primarnaboja);
+              font-size: 1.5em;
+              font-weight: bolder;
+            "
+            ><br />Neil Armstrong</span
+          >
+        </p>
+      </div>
+      <div class="grid-slika">
+        <img src="./Slike/slika2.jpg" />
+      </div>
+    </div>
+    <div class="content">
+      <div class="grid-tekst">
+        <p>O čemu želite naučiti po nešto?</p>
+      </div>
+      <div class="grid-nav">
+        <button onclick="otvoriPlanete()">
+          <img src="./Slike/planeta.png" />
+        </button>
+        <button onclick="otvoriSisteme()">
+          <img src="./Slike/sistemi.png" />
+        </button>
+        <button onclick="otvoriCR()"><img src="./Slike/crnarupa.png" /></button>
+        <button onclick="otvoriPutovanja()">
+          <img src="./Slike/putovanja svemirom.png" />
+        </button>
+        <p>Planete</p>
+        <p>Sistemi</p>
+        <p>Crne rupe</p>
+        <p>Putovanja</p>
+      </div>
+    </div>
+    <div class="footer">
+      <button class="footerbtn" onclick="scrolltotop()">
+        <img src="./Slike/galaxy-svgrepo-com.png" />
+      </button>
+      <p>Nazad na vrh</p>
+      <p>Sajt kreiran za Web Design</p>
+      <p>Copyright 2023 &copy</p>
+    </div>
+
+    <!-- slajdovi -->
+
+    <div class="planete">
+      <h1>Planete</h1>
+      <img src="./Slike/planeta.gif" />
+      <p>
+        Planete su nebeska tijela koja kruže oko zvijezda, ne posjeduju
+        sopstvenu svjetlost, te se oslanjaju na zrake svjetlosti koje odbijaju
+        od zvijezde oko koje kruže. U našem Sunčevom sistemu postoji osam
+        planeta, a one se dijele u dvije osnovne kategorije: unutrašnje planete
+        (Merkur, Venera, Zemlja i Mars) i vanjske planete (Jupiter, Saturn, Uran
+        i Neptun). Svaka planeta ima svoju jedinstvenu kombinaciju
+        karakteristika, kao što su veličina, masa, gravitacija, atmosfera i
+        udaljenost od zvijezde oko koje kruže.
+      </p>
+      <div class="slide-nav">
+        <button class="zatvori" onclick="zatvoriSlide()">Zatvori</button>
+        <button class="sljedeci" onclick="sljedeciSlide1()">Sljedeće</button>
+      </div>
+    </div>
+
+    <div class="sistemi">
+      <h1>Planetarni Sistemi</h1>
+      <img src="./Slike/sistemi.gif" />
+      <p>
+        Planetarni sistemi su skupovi tijela koja se okreću oko zvijezde i
+        formiraju se procesom akrecije, gdje se materija skuplja u velike
+        objekte poput planeta. Ovi sistemi mogu uključivati planete, patuljaste
+        planete, asteroide, komete i druge objekte, poput mjesečevih satelita.
+        Planetarni sistemi su formirani u protoplanetarnim diskovima koji se
+        nalaze oko mlade zvijezde, a ti diskovi sadrže gas i prašinu koja se
+        akrecira u velike objekte. Kako ovi objekti rastu, oni privlače i
+        akreciraju dodatnu materiju iz diskova, što dovodi do formiranja
+        planeta.
+      </p>
+      <div class="slide-nav">
+        <button class="zatvori" onclick="zatvoriSlide()">Zatvori</button>
+        <button class="sljedeci" onclick="sljedeciSlide2()">Sljedeće</button>
+      </div>
+    </div>
+
+    <div class="cr">
+      <h1>Crne Rupe</h1>
+      <img src="./Slike/cr.gif" />
+      <p>
+        Crne rupe su objekti u svemiru koji nastaju kada se velike zvijezde
+        uruše pod svojom sopstvenom gravitacijom, stvarajući ogromnu količinu
+        mase na vrlo malom prostoru. To rezultira pojavom ekstremno jake
+        gravitacije koja privlači sve što se nalazi u blizini, uključujući
+        svjetlost, što čini crne rupe nevidljivima. Postoje tri vrste crnih
+        rupa: stelarne crne rupe, srednje crne rupe i supermasivne crne rupe.
+        Stelarne crne rupe su manje i nastaju nakon kolapsa masivnih zvijezda,
+        dok su srednje crne rupe teže od stelarnih, ali lakše od supermasivnih
+        crnih rupa. Supermasivne crne rupe su najmasivnije, te se nalaze u
+        središtu galaksija, uključujući i našu Mliječnu stazu.
+      </p>
+      <div class="slide-nav">
+        <button class="zatvori" onclick="zatvoriSlide()">Zatvori</button>
+        <button class="sljedeci" onclick="sljedeciSlide3()">Sljedeće</button>
+      </div>
+    </div>
+
+    <div class="putovanja">
+      <h1>Putovanja Svemirom</h1>
+      <img src="./Slike/putovanja.gif" />
+      <p>
+        Putovanje u svemir je izuzetno složen proces koji zahtijeva naprednu
+        tehnologiju i planiranje. Prilikom putovanja u svemir, potrebno je
+        prevladati niz izazova kao što su gravitacija, vakuum i radijacija.
+        Putovanje u svemir se može vršiti različitim tipovima letjelica, kao što
+        su rakete, svemirske letjelice, sondi i roveri. Ovi uređaji koriste
+        različite vrste pogona, kao što su kemijski, nuklearni i električni,
+        kako bi se osigurao dovoljan impuls i brzina za prevladavanje
+        gravitacije i izbacivanje iz Zemljine atmosfere.
+      </p>
+      <div class="slide-nav">
+        <button class="zatvori" onclick="zatvoriSlide()">Zatvori</button>
+        <button class="sljedeci" onclick="sljedeciSlide4()">Sljedeće</button>
+      </div>
+    </div>
+  </body>
+</html>
