@@ -61,3 +61,7 @@ function hvala() {
 function scroll() {
   window.scrollTo(0, 0);
 }
+
+function scrolltotop() {
+  document.body.scrollTop = 0;
+}
