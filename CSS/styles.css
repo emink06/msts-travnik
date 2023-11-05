@@ -554,8 +554,6 @@ html {
   width: 100%;
   display: grid;
   place-items: center;
-  background-image: url(../Slike/kontaktbg.webp);
-  background-size: cover;
 }
 
 .kontakt {
